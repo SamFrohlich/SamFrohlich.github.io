@@ -1,4 +1,4 @@
-module Homepage exposing (main)
+module Main exposing (..)
 
 import Html exposing (..)
 import Html.Attributes exposing (..)
@@ -6,7 +6,7 @@ import Html.Attributes exposing (..)
 
 view model =
     div [ class "jumbotron" ]
-        [ h1 [] [ text "Samantha Frohlich" ]
+        [ h1 [] [ text "Sam Frohlich" ]
         , p []
             [ text "PhD Student" ]
         ]

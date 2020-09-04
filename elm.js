@@ -4418,7 +4418,7 @@ var $elm$html$Html$h1 = _VirtualDom_node('h1');
 var $elm$html$Html$p = _VirtualDom_node('p');
 var $elm$virtual_dom$VirtualDom$text = _VirtualDom_text;
 var $elm$html$Html$text = $elm$virtual_dom$VirtualDom$text;
-var $author$project$Homepage$view = function (model) {
+var $author$project$Main$view = function (model) {
 	return A2(
 		$elm$html$Html$div,
 		_List_fromArray(
@@ -4432,7 +4432,7 @@ var $author$project$Homepage$view = function (model) {
 				_List_Nil,
 				_List_fromArray(
 					[
-						$elm$html$Html$text('Samantha Frohlich')
+						$elm$html$Html$text('Sam Frohlich')
 					])),
 				A2(
 				$elm$html$Html$p,
@@ -4443,5 +4443,5 @@ var $author$project$Homepage$view = function (model) {
 					]))
 			]));
 };
-var $author$project$Homepage$main = $author$project$Homepage$view('dummy model');
-_Platform_export({'Homepage':{'init':_VirtualDom_init($author$project$Homepage$main)(0)(0)}});}(this));
+var $author$project$Main$main = $author$project$Main$view('dummy model');
+_Platform_export({'Main':{'init':_VirtualDom_init($author$project$Main$main)(0)(0)}});}(this));

@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet"
-          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  	<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
     <style>
       .jumbotron {
@@ -13,12 +13,11 @@
   </head>
 
   <body>
-    <div id="elm-app-is-loaded-here"></div>
+    <div id="elm-code-is-loaded-here"></div>
+
     <script src="elm.js"></script>
     <script>
-      var app = Elm.HomePage.init({
-        node: document.getElementById("elm-app-is-loaded-here")
-      });
+      const app = Elm.Main.init({node:  document.getElementById("elm-code-is-loaded-here") });
     </script>
   </body>
 </html>
