@@ -5,5 +5,7 @@
 with pkgs;
 stdenv.mkDerivation {
   name = "elm";
-  buildInputs = [ elmPackages.elm ];
+  buildInputs = [ elmPackages.elm
+                  elmPackages.elm-language-server
+                ];
 }
