@@ -5165,9 +5165,7 @@ var $author$project$Main$update = F2(
 				{interest: model.interest + 'interest '}),
 			$elm$core$Platform$Cmd$none);
 	});
-var $author$project$Main$GetInterest = {$: 'GetInterest'};
-var $elm$html$Html$blockquote = _VirtualDom_node('blockquote');
-var $elm$html$Html$button = _VirtualDom_node('button');
+var $elm$html$Html$a = _VirtualDom_node('a');
 var $elm$json$Json$Encode$string = _Json_wrap;
 var $elm$html$Html$Attributes$stringProperty = F2(
 	function (key, string) {
@@ -5179,26 +5177,34 @@ var $elm$html$Html$Attributes$stringProperty = F2(
 var $elm$html$Html$Attributes$class = $elm$html$Html$Attributes$stringProperty('className');
 var $elm$html$Html$div = _VirtualDom_node('div');
 var $elm$html$Html$h1 = _VirtualDom_node('h1');
-var $elm$virtual_dom$VirtualDom$Normal = function (a) {
-	return {$: 'Normal', a: a};
-};
-var $elm$virtual_dom$VirtualDom$on = _VirtualDom_on;
-var $elm$html$Html$Events$on = F2(
-	function (event, decoder) {
-		return A2(
-			$elm$virtual_dom$VirtualDom$on,
-			event,
-			$elm$virtual_dom$VirtualDom$Normal(decoder));
-	});
-var $elm$html$Html$Events$onClick = function (msg) {
+var $elm$html$Html$Attributes$height = function (n) {
 	return A2(
-		$elm$html$Html$Events$on,
-		'click',
-		$elm$json$Json$Decode$succeed(msg));
+		_VirtualDom_attribute,
+		'height',
+		$elm$core$String$fromInt(n));
 };
+var $elm$html$Html$Attributes$href = function (url) {
+	return A2(
+		$elm$html$Html$Attributes$stringProperty,
+		'href',
+		_VirtualDom_noJavaScriptUri(url));
+};
+var $elm$html$Html$img = _VirtualDom_node('img');
 var $elm$html$Html$p = _VirtualDom_node('p');
+var $elm$html$Html$Attributes$src = function (url) {
+	return A2(
+		$elm$html$Html$Attributes$stringProperty,
+		'src',
+		_VirtualDom_noJavaScriptOrHtmlUri(url));
+};
 var $elm$virtual_dom$VirtualDom$text = _VirtualDom_text;
 var $elm$html$Html$text = $elm$virtual_dom$VirtualDom$text;
+var $elm$html$Html$Attributes$width = function (n) {
+	return A2(
+		_VirtualDom_attribute,
+		'width',
+		$elm$core$String$fromInt(n));
+};
 var $author$project$Main$view = function (model) {
 	return A2(
 		$elm$html$Html$div,
@@ -5208,6 +5214,15 @@ var $author$project$Main$view = function (model) {
 			]),
 		_List_fromArray(
 			[
+				A2(
+				$elm$html$Html$img,
+				_List_fromArray(
+					[
+						$elm$html$Html$Attributes$src('Content/Images/me.jpg'),
+						$elm$html$Html$Attributes$width(200),
+						$elm$html$Html$Attributes$height(200)
+					]),
+				_List_Nil),
 				A2(
 				$elm$html$Html$h1,
 				_List_Nil,
@@ -5233,33 +5248,63 @@ var $author$project$Main$view = function (model) {
 				$elm$html$Html$p,
 				_List_fromArray(
 					[
-						$elm$html$Html$Attributes$class('text-center')
+						$elm$html$Html$Attributes$class('socials')
 					]),
 				_List_fromArray(
 					[
 						A2(
-						$elm$html$Html$button,
+						$elm$html$Html$a,
 						_List_fromArray(
 							[
-								$elm$html$Html$Attributes$class('btn btn-success'),
-								$elm$html$Html$Events$onClick($author$project$Main$GetInterest)
+								$elm$html$Html$Attributes$href('https://www.linkedin.com/in/samantha-frohlich-a09a1b158')
 							]),
 						_List_fromArray(
 							[
-								$elm$html$Html$text('Grab an Interest!')
-							]))
-					])),
-				A2(
-				$elm$html$Html$blockquote,
-				_List_Nil,
-				_List_fromArray(
-					[
+								A2(
+								$elm$html$Html$img,
+								_List_fromArray(
+									[
+										$elm$html$Html$Attributes$src('Content/Images/linkedin.svg'),
+										$elm$html$Html$Attributes$width(30),
+										$elm$html$Html$Attributes$height(30)
+									]),
+								_List_Nil)
+							])),
 						A2(
-						$elm$html$Html$p,
-						_List_Nil,
+						$elm$html$Html$a,
 						_List_fromArray(
 							[
-								$elm$html$Html$text(model.interest)
+								$elm$html$Html$Attributes$href(' mailto:sf16540@my.bristol.ac.uk')
+							]),
+						_List_fromArray(
+							[
+								A2(
+								$elm$html$Html$img,
+								_List_fromArray(
+									[
+										$elm$html$Html$Attributes$src('Content/Images/envelope.svg'),
+										$elm$html$Html$Attributes$width(30),
+										$elm$html$Html$Attributes$height(30)
+									]),
+								_List_Nil)
+							])),
+						A2(
+						$elm$html$Html$a,
+						_List_fromArray(
+							[
+								$elm$html$Html$Attributes$href('https://github.com/SamFrohlich')
+							]),
+						_List_fromArray(
+							[
+								A2(
+								$elm$html$Html$img,
+								_List_fromArray(
+									[
+										$elm$html$Html$Attributes$src('Content/Images/github.svg'),
+										$elm$html$Html$Attributes$width(30),
+										$elm$html$Html$Attributes$height(30)
+									]),
+								_List_Nil)
 							]))
 					]))
 			]));

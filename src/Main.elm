@@ -59,16 +59,29 @@ update msg model =
 view : Details -> Html Msg
 view model =
     div [ class "jumbotron" ]
-        [ h1 [] [ text model.name ]
+    -- TODO:- make me reactive
+        [ -- Photo:
+          img [ src "Content/Images/me.jpg", width 200, height 200 ] []
+          -- Details:
+        , h1 [] [ text model.name ]
         , p []
             [ text model.position ]
         , p []
             [ text model.institution ]
-        , p [ class "text-center" ] [
-            button [ class "btn btn-success", onClick GetInterest ] [ text "Grab an Interest!" ]
-        ]
-        -- Blockquote with quote
-        , blockquote [] [
-            p [] [text model.interest]
-        ]
+        --   -- Interests:
+        -- , p [ class "text-center" ] [
+        --     button [ class "btn btn-success", onClick GetInterest ] [ text "Grab an Interest!" ]
+        -- ]
+        -- , blockquote [] [
+        --     p [] [text model.interest]
+        -- ]
+          -- Socials:
+        , p [class "socials"]
+            [ a [ href "https://www.linkedin.com/in/samantha-frohlich-a09a1b158" ]
+                [ img [ src "Content/Images/linkedin.svg", width 30, height 30 ] [] ]
+            , a [ href " mailto:sf16540@my.bristol.ac.uk" ]
+                [ img [ src "Content/Images/envelope.svg", width 30, height 30 ] [] ]
+            , a [ href "https://github.com/SamFrohlich" ]
+                [ img [ src "Content/Images/github.svg", width 30, height 30 ] [] ]
+            ]
     ]
