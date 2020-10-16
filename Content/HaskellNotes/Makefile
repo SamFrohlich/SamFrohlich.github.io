@@ -5,7 +5,6 @@
 # In order to use this makefile, you need some tools:
 # - GNU make
 # - Pandoc
-# - LuaLaTeX
 
 # Directory containing source (Markdown) files
 source := markdown
@@ -23,7 +22,6 @@ objects := $(patsubst %.md,%.pdf,$(subst $(source),$(output),$(sources)))
 all: $(objects)
 
 # Recipe for converting a Markdown file into PDF using Pandoc
-#$(output)/%.pdf: pandoc $(source)/%.md --pdf-engine=latexmk -o $@
 $(output)/%.pdf: $(source)/%.md
 	pandoc \
 		--variable fontsize=11pt \
@@ -32,10 +30,6 @@ $(output)/%.pdf: $(source)/%.md
 		-f markdown  $< \
   	--pdf-engine=latexmk \
   	-o $@
-
-# 		-f markdown  $< \
-# 		--latex-engine=lualatex \
-# 		-o $@
 
 .PHONY : clean
 
