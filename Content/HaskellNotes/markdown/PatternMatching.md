@@ -33,7 +33,7 @@ sum (x:xs)  =  x + sum' xs
 Hopefully the first line of the definition makes sense. `sum` is being told to return 0 if it is given `[]` as its input since well the sum of nothing is nothing. The second line is a little odd the first time you see it. `(x:xs)` just represents a list where you have called the first item `x` and the rest of the items `xs` so you can easily tell the function to add the first item to the sum of the rest of the items. Remember `x` and `xs` are just names. You could still write whatever you want, for example:
 
 ```haskell
-sum (first:rest) = first + sum' rest
+sum (first:rest) = first + sum rest
 ```
 
 Notice how `(x:xs)` is in brackets? This is so that the compiler can type check your pattern matching and know that `x:xs` is only referring to the first parameter of the function, something that will become more important when you progress to pattern matching on more than one input.
@@ -44,7 +44,7 @@ Here is another list pattern match example that uses the `_` wildcard syntax:
 take :: Int -> [a] -> [a]
 take _ []      =  []
 take 0 _       =  []
-take n (x:xs)  =  x : (take' (n-1) xs)
+take n (x:xs)  =  x : (take (n-1) xs)
 ```
 
 `take` is a function that takes in an `Int`, and a list, and produces a list, basically it plucks the first `n` elements of the inputted list and places then in the new list. The definition of `take` is a good example of using the underscore. If `n=0` we don't care what the list is since we know that we are just going to return the empty list. Same with if the inputted list is empty. It doesn't matter what `n` is since there is nothing to take from anyway.

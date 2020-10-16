@@ -27,10 +27,14 @@ Branching in programming is how you specify the decision tree you would like you
 Haskell has lots of fun ways of making decisions based on inputs!
 
 We have:
-* if statements
-* case statements
-* pattern matching
-* guards
+
+  * if statements
+
+  * case statements
+
+  * pattern matching
+
+  * guards
 
 Just like spoken languages, this dialect provides numerous ways of saying the same thing. For example, in English, I can tell you _"You must love Haskell"_, or I could say _"Love haskell, you must"_. Both express the same valuable advice, but you might have noticed that one of these commandments makes more sense to you, while the other might make more sense to Yoda. In other words, one is more "idiomatic" to you.
 
