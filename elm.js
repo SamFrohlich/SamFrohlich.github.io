@@ -5278,7 +5278,7 @@ var $author$project$Main$view = function (model) {
 						$elm$html$Html$a,
 						_List_fromArray(
 							[
-								$elm$html$Html$Attributes$href('mailto:sf16540@my.bristol.ac.uk')
+								$elm$html$Html$Attributes$href('mailto:samantha.frohlich@bristol.ac.uk')
 							]),
 						_List_fromArray(
 							[

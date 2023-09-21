@@ -86,7 +86,7 @@ view model =
                       , alt "LinkedIn"
                       , title "LinkedIn"]
                       [] ]
-            , a [ href "mailto:sf16540@my.bristol.ac.uk" ]
+            , a [ href "mailto:samantha.frohlich@bristol.ac.uk" ]
                 [ img [ src "Content/Images/envelope.svg"
                       , width 30, height 30
                       , alt "Email"
