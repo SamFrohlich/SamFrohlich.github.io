@@ -123,7 +123,7 @@ view _ =
                       , alt "GitHub"
                       , title "GitHub" ]
                       [] ]
-            , a [ href "https://orcid.org/0000-0003-3679-8870" ]
+            , a [ href "https://orcid.org/0000-0002-4423-6918" ]
                 [ img [ src "Content/Images/orcid.svg"
                       , width 30, height 30
                       , alt "ORCiD"

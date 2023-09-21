@@ -5144,26 +5144,16 @@ var $elm$core$Task$perform = F2(
 				A2($elm$core$Task$map, toMessage, task)));
 	});
 var $elm$browser$Browser$element = _Browser_element;
-var $author$project$Main$Details = F4(
-	function (name, position, institution, interest) {
-		return {institution: institution, interest: interest, name: name, position: position};
-	});
 var $elm$core$Platform$Cmd$batch = _Platform_batch;
 var $elm$core$Platform$Cmd$none = $elm$core$Platform$Cmd$batch(_List_Nil);
 var $author$project$Main$init = function (_v0) {
-	return _Utils_Tuple2(
-		A4($author$project$Main$Details, 'Sam Frohlich', 'Programming Languages PhD Student', 'University of Bristol', ''),
-		$elm$core$Platform$Cmd$none);
+	return _Utils_Tuple2(_Utils_Tuple0, $elm$core$Platform$Cmd$none);
 };
 var $elm$core$Platform$Sub$batch = _Platform_batch;
 var $elm$core$Platform$Sub$none = $elm$core$Platform$Sub$batch(_List_Nil);
 var $author$project$Main$update = F2(
-	function (msg, model) {
-		return _Utils_Tuple2(
-			_Utils_update(
-				model,
-				{interest: model.interest + 'interest '}),
-			$elm$core$Platform$Cmd$none);
+	function (msg, _v0) {
+		return _Utils_Tuple2(_Utils_Tuple0, $elm$core$Platform$Cmd$none);
 	});
 var $elm$html$Html$a = _VirtualDom_node('a');
 var $elm$json$Json$Encode$string = _Json_wrap;
@@ -5177,6 +5167,11 @@ var $elm$html$Html$Attributes$stringProperty = F2(
 var $elm$html$Html$Attributes$alt = $elm$html$Html$Attributes$stringProperty('alt');
 var $elm$html$Html$Attributes$class = $elm$html$Html$Attributes$stringProperty('className');
 var $elm$html$Html$div = _VirtualDom_node('div');
+var $author$project$Main$Details = F5(
+	function (name, position, institution, interest, socials) {
+		return {institution: institution, interest: interest, name: name, position: position, socials: socials};
+	});
+var $author$project$Main$fixedInfo = A5($author$project$Main$Details, 'Sam Frohlich', 'Programming Languages PhD Student', 'University of Bristol', '', _List_Nil);
 var $elm$html$Html$h1 = _VirtualDom_node('h1');
 var $elm$html$Html$Attributes$height = function (n) {
 	return A2(
@@ -5207,7 +5202,7 @@ var $elm$html$Html$Attributes$width = function (n) {
 		'width',
 		$elm$core$String$fromInt(n));
 };
-var $author$project$Main$view = function (model) {
+var $author$project$Main$view = function (_v0) {
 	return A2(
 		$elm$html$Html$div,
 		_List_fromArray(
@@ -5230,21 +5225,21 @@ var $author$project$Main$view = function (model) {
 				_List_Nil,
 				_List_fromArray(
 					[
-						$elm$html$Html$text(model.name)
+						$elm$html$Html$text($author$project$Main$fixedInfo.name)
 					])),
 				A2(
 				$elm$html$Html$p,
 				_List_Nil,
 				_List_fromArray(
 					[
-						$elm$html$Html$text(model.position)
+						$elm$html$Html$text($author$project$Main$fixedInfo.position)
 					])),
 				A2(
 				$elm$html$Html$p,
 				_List_Nil,
 				_List_fromArray(
 					[
-						$elm$html$Html$text(model.institution)
+						$elm$html$Html$text($author$project$Main$fixedInfo.institution)
 					])),
 				A2(
 				$elm$html$Html$p,
@@ -5318,7 +5313,7 @@ var $author$project$Main$view = function (model) {
 						$elm$html$Html$a,
 						_List_fromArray(
 							[
-								$elm$html$Html$Attributes$href('https://orcid.org/0000-0003-3679-8870')
+								$elm$html$Html$Attributes$href('https://orcid.org/0000-0002-4423-6918')
 							]),
 						_List_fromArray(
 							[
