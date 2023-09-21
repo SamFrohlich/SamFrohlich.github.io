@@ -21,12 +21,14 @@ The type signatiure is opertional, but reccomented. IT acts as a summary of what
 
 You can use the LHS of the equals to name the various input parameters so that you can refer to them easily on the RHS of the definition where you will actually compute stuff with them. These are just names, you can chose any names you want.
 
-> add :: Num a => a -> a -> a
-> add x y = x + y
-
-> plus :: Num a => a -> a -> a
-> plus water melon = water + melon
-
+```haskell
+add :: Num a => a -> a -> a
+add x y = x + y
+```
+```haskell
+plus :: Num a => a -> a -> a
+plus water melon = water + melon
+```
 The above two functions do exactly the same thing, the only difference is that `add` uses more succinct and mathematical labels for the two inputs whereas `plus` is more fun and random. We like super short variable names because it's far easier to type short things.
 
 

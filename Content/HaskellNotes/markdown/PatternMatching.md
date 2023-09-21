@@ -48,5 +48,3 @@ take n (x:xs)  =  x : (take (n-1) xs)
 ```
 
 `take` is a function that takes in an `Int`, and a list, and produces a list, basically it plucks the first `n` elements of the inputted list and places then in the new list. The definition of `take` is a good example of using the underscore. If `n=0` we don't care what the list is since we know that we are just going to return the empty list. Same with if the inputted list is empty. It doesn't matter what `n` is since there is nothing to take from anyway.
-
-

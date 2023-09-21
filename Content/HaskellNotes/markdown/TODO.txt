@@ -1,5 +1,8 @@
 # Breakdown
 
+Dunno if we wanna make these lhs files so that the code type checks
+
+
 breakdown into the smallest blocks, then use tags/labels to naviagte them
 
 we could also collect together things like typeclass what why pages as a list of links
@@ -54,6 +57,8 @@ show type class
 NON LINEAR factlets
 
 we should have a glorrasry, and always link technical words like nlab
+Oh also make sure you post your jargon translation(glossary), and include first class in it
+
 
 ways of navigating:
   beaten path - a suggested nav
