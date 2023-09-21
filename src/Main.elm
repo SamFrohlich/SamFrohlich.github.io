@@ -76,12 +76,33 @@ view model =
         --     p [] [text model.interest]
         -- ]
           -- Socials:
+          -- TODO no stretching on logos
+          -- TODO hover info on logos
+          -- TODO made this part of model, not part of this
         , p [class "socials"]
             [ a [ href "https://www.linkedin.com/in/samantha-frohlich-a09a1b158" ]
-                [ img [ src "Content/Images/linkedin.svg", width 30, height 30 ] [] ]
-            , a [ href " mailto:sf16540@my.bristol.ac.uk" ]
-                [ img [ src "Content/Images/envelope.svg", width 30, height 30 ] [] ]
+                [ img [ src "Content/Images/linkedin.svg"
+                      , width 30, height 30
+                      , alt "LinkedIn"
+                      , title "LinkedIn"]
+                      [] ]
+            , a [ href "mailto:sf16540@my.bristol.ac.uk" ]
+                [ img [ src "Content/Images/envelope.svg"
+                      , width 30, height 30
+                      , alt "Email"
+                      , title "Email" ]
+                      [] ]
             , a [ href "https://github.com/SamFrohlich" ]
-                [ img [ src "Content/Images/github.svg", width 30, height 30 ] [] ]
+                [ img [ src "Content/Images/github.svg"
+                      , width 30, height 30
+                      , alt "GitHub" 
+                      , title "GitHub" ]
+                      [] ]
+            , a [ href "https://orcid.org/0000-0003-3679-8870" ]
+                [ img [ src "Content/Images/orcid.svg"
+                      , width 30, height 30
+                      , alt "ORCiD"
+                      , title "ORCiD"]
+                      [] ]
             ]
     ]

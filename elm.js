@@ -5174,6 +5174,7 @@ var $elm$html$Html$Attributes$stringProperty = F2(
 			key,
 			$elm$json$Json$Encode$string(string));
 	});
+var $elm$html$Html$Attributes$alt = $elm$html$Html$Attributes$stringProperty('alt');
 var $elm$html$Html$Attributes$class = $elm$html$Html$Attributes$stringProperty('className');
 var $elm$html$Html$div = _VirtualDom_node('div');
 var $elm$html$Html$h1 = _VirtualDom_node('h1');
@@ -5199,6 +5200,7 @@ var $elm$html$Html$Attributes$src = function (url) {
 };
 var $elm$virtual_dom$VirtualDom$text = _VirtualDom_text;
 var $elm$html$Html$text = $elm$virtual_dom$VirtualDom$text;
+var $elm$html$Html$Attributes$title = $elm$html$Html$Attributes$stringProperty('title');
 var $elm$html$Html$Attributes$width = function (n) {
 	return A2(
 		_VirtualDom_attribute,
@@ -5266,7 +5268,9 @@ var $author$project$Main$view = function (model) {
 									[
 										$elm$html$Html$Attributes$src('Content/Images/linkedin.svg'),
 										$elm$html$Html$Attributes$width(30),
-										$elm$html$Html$Attributes$height(30)
+										$elm$html$Html$Attributes$height(30),
+										$elm$html$Html$Attributes$alt('LinkedIn'),
+										$elm$html$Html$Attributes$title('LinkedIn')
 									]),
 								_List_Nil)
 							])),
@@ -5274,7 +5278,7 @@ var $author$project$Main$view = function (model) {
 						$elm$html$Html$a,
 						_List_fromArray(
 							[
-								$elm$html$Html$Attributes$href(' mailto:sf16540@my.bristol.ac.uk')
+								$elm$html$Html$Attributes$href('mailto:sf16540@my.bristol.ac.uk')
 							]),
 						_List_fromArray(
 							[
@@ -5284,7 +5288,9 @@ var $author$project$Main$view = function (model) {
 									[
 										$elm$html$Html$Attributes$src('Content/Images/envelope.svg'),
 										$elm$html$Html$Attributes$width(30),
-										$elm$html$Html$Attributes$height(30)
+										$elm$html$Html$Attributes$height(30),
+										$elm$html$Html$Attributes$alt('Email'),
+										$elm$html$Html$Attributes$title('Email')
 									]),
 								_List_Nil)
 							])),
@@ -5302,7 +5308,29 @@ var $author$project$Main$view = function (model) {
 									[
 										$elm$html$Html$Attributes$src('Content/Images/github.svg'),
 										$elm$html$Html$Attributes$width(30),
-										$elm$html$Html$Attributes$height(30)
+										$elm$html$Html$Attributes$height(30),
+										$elm$html$Html$Attributes$alt('GitHub'),
+										$elm$html$Html$Attributes$title('GitHub')
+									]),
+								_List_Nil)
+							])),
+						A2(
+						$elm$html$Html$a,
+						_List_fromArray(
+							[
+								$elm$html$Html$Attributes$href('https://orcid.org/0000-0003-3679-8870')
+							]),
+						_List_fromArray(
+							[
+								A2(
+								$elm$html$Html$img,
+								_List_fromArray(
+									[
+										$elm$html$Html$Attributes$src('Content/Images/orcid.svg'),
+										$elm$html$Html$Attributes$width(30),
+										$elm$html$Html$Attributes$height(30),
+										$elm$html$Html$Attributes$alt('ORCiD'),
+										$elm$html$Html$Attributes$title('ORCiD')
 									]),
 								_List_Nil)
 							]))
