@@ -5,11 +5,28 @@ import Html exposing (..)
 import Html.Events exposing (..)
 import Html.Attributes exposing (..)
 
+{-
+Website update plan:
+* start using elm properly e.g. model is just what changes, and we have views of that
+    - make viewSocials function
+    - fill in socials
+* add the things your website needs:
+    - interests
+    - link to PLRG
+    - publications (publiocation record and view publication function, you'll want the cite, the pdf, the talk, the video)
+    ? teaching stuff
+* take advantage of elm
+    - get some cute animations
+* make things pretty
+    - have clickable things go transparent on hover
+
+-}
+
 -- -----------------------------------------------------------------------------
 -- Main
 -- -----------------------------------------------------------------------------
 
-main : Program () Details Msg
+main : Program () () Msg
 main =
     Browser.element
         { init = init
@@ -19,7 +36,7 @@ main =
         }
 
 -- -----------------------------------------------------------------------------
--- Model
+-- Fixed Information
 -- -----------------------------------------------------------------------------
 
 type alias Details =
@@ -27,13 +44,30 @@ type alias Details =
     , position : String
     , institution : String
     , interest : String
+    , socials : List Social
     }
 
-init : flags -> (Details, Cmd Msg)
-init _ = ( Details "Sam Frohlich"
-                "Programming Languages PhD Student"
-                "University of Bristol"
-                ""
+type alias Social =
+    { name : String
+    , website : String
+    }
+
+fixedInfo : Details
+fixedInfo = Details
+    "Sam Frohlich"
+    "Programming Languages PhD Student"
+    "University of Bristol"
+    ""
+    []
+    -- TODO fill in social info
+    -- Social "LinkedIn" "https://www.linkedin.com/in/samantha-frohlich-a09a1b158"
+
+-- -----------------------------------------------------------------------------
+-- Model
+-- -----------------------------------------------------------------------------
+
+init : flags -> ((), Cmd Msg)
+init _ = ( ()
         , Cmd.none
         )
 
@@ -45,40 +79,31 @@ init _ = ( Details "Sam Frohlich"
 type Msg = GetInterest
 
 -- How we react to each possible event.
-update : Msg -> Details -> (Details, Cmd Msg)
-update msg model =
+update : Msg -> () -> ((), Cmd Msg)
+update msg _ =
     case msg of
         GetInterest ->
-            ( { model | interest = model.interest ++ "interest " }, Cmd.none )
+            ( (), Cmd.none )
 
 
 -- -----------------------------------------------------------------------------
 -- View
 -- -----------------------------------------------------------------------------
 
-view : Details -> Html Msg
-view model =
+view : () -> Html Msg
+view _ =
     div [ class "jumbotron" ]
     -- TODO:- make me reactive
         [ -- Photo:
           img [ src "Content/Images/me.jpg", width 200, height 200 ] []
           -- Details:
-        , h1 [] [ text model.name ]
+        , h1 [] [ text fixedInfo.name ]
         , p []
-            [ text model.position ]
+            [ text fixedInfo.position ]
         , p []
-            [ text model.institution ]
-        --   -- Interests:
-        -- , p [ class "text-center" ] [
-        --     button [ class "btn btn-success", onClick GetInterest ] [ text "Grab an Interest!" ]
-        -- ]
-        -- , blockquote [] [
-        --     p [] [text model.interest]
-        -- ]
+            [ text fixedInfo.institution ]
           -- Socials:
-          -- TODO no stretching on logos
-          -- TODO hover info on logos
-          -- TODO made this part of model, not part of this
+          -- TODO write a viewSocials that will create this from fixedInfo
         , p [class "socials"]
             [ a [ href "https://www.linkedin.com/in/samantha-frohlich-a09a1b158" ]
                 [ img [ src "Content/Images/linkedin.svg"
@@ -95,7 +120,7 @@ view model =
             , a [ href "https://github.com/SamFrohlich" ]
                 [ img [ src "Content/Images/github.svg"
                       , width 30, height 30
-                      , alt "GitHub" 
+                      , alt "GitHub"
                       , title "GitHub" ]
                       [] ]
             , a [ href "https://orcid.org/0000-0003-3679-8870" ]
