@@ -10,7 +10,6 @@ import Markdown
 {-
 Website update plan:
 * add the things your website needs:
-    - awards (SRC)
     ? teaching stuff
 * take advantage of elm
     - get some cute animations
@@ -156,6 +155,13 @@ view _ =
         -- Publications
         , h2 [] [text "Publications:"]
         , p [] (L.map viewPub fixedInfo.pubs)
+        -- Awards
+        , h2 [] [text "Awards:"]
+        , dl [] [ dt [] [text "2023"], dd [] [text "ICFP 2023 Distinguished paper"]
+                , dt [] [text "2020"], dd [] [text "EPSRC Doctoral Training Partnership Studentship"]
+                , dt [] [text "2019"], dd [] [text "ICFP 2019 SRC, Undergraduate Category, 1st Place"]
+                ]
+            -- distyibyushed, src
         -- Socials:
         , p [class "socials"] (L.map viewSocial fixedInfo.socials)
     ]

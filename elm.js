@@ -5319,7 +5319,10 @@ var $elm$html$Html$Attributes$stringProperty = F2(
 			$elm$json$Json$Encode$string(string));
 	});
 var $elm$html$Html$Attributes$class = $elm$html$Html$Attributes$stringProperty('className');
+var $elm$html$Html$dd = _VirtualDom_node('dd');
 var $elm$html$Html$div = _VirtualDom_node('div');
+var $elm$html$Html$dl = _VirtualDom_node('dl');
+var $elm$html$Html$dt = _VirtualDom_node('dt');
 var $author$project$Main$Details = F7(
 	function (name, position, institution, interests, aboutMe, socials, pubs) {
 		return {aboutMe: aboutMe, institution: institution, interests: interests, name: name, position: position, pubs: pubs, socials: socials};
@@ -9824,6 +9827,61 @@ var $author$project$Main$view = function (_v0) {
 				$elm$html$Html$p,
 				_List_Nil,
 				A2($elm$core$List$map, $author$project$Main$viewPub, $author$project$Main$fixedInfo.pubs)),
+				A2(
+				$elm$html$Html$h2,
+				_List_Nil,
+				_List_fromArray(
+					[
+						$elm$html$Html$text('Awards:')
+					])),
+				A2(
+				$elm$html$Html$dl,
+				_List_Nil,
+				_List_fromArray(
+					[
+						A2(
+						$elm$html$Html$dt,
+						_List_Nil,
+						_List_fromArray(
+							[
+								$elm$html$Html$text('2023')
+							])),
+						A2(
+						$elm$html$Html$dd,
+						_List_Nil,
+						_List_fromArray(
+							[
+								$elm$html$Html$text('ICFP 2023 Distinguished paper')
+							])),
+						A2(
+						$elm$html$Html$dt,
+						_List_Nil,
+						_List_fromArray(
+							[
+								$elm$html$Html$text('2020')
+							])),
+						A2(
+						$elm$html$Html$dd,
+						_List_Nil,
+						_List_fromArray(
+							[
+								$elm$html$Html$text('EPSRC Doctoral Training Partnership Studentship')
+							])),
+						A2(
+						$elm$html$Html$dt,
+						_List_Nil,
+						_List_fromArray(
+							[
+								$elm$html$Html$text('2019')
+							])),
+						A2(
+						$elm$html$Html$dd,
+						_List_Nil,
+						_List_fromArray(
+							[
+								$elm$html$Html$text('ICFP 2019 SRC, Undergraduate Category, 1st Place')
+							]))
+					])),
 				A2(
 				$elm$html$Html$p,
 				_List_fromArray(
