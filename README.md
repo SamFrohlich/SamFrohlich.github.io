@@ -3,7 +3,7 @@
 ## Editing
 
 Edit in `Main.elm`.
-Run `elm reactor` to get feedback from your editing, if you open an elm file (e.g. `Main.elm`), you will get its error feedback, if you open a html file (e.g. `index.html`), it will be rendered.
+Run `elm reactor` (in your nix shell) to get feedback from your editing, if you open an elm file (e.g. `Main.elm`), you will get its error feedback, if you open a html file (e.g. `index.html`), it will be rendered.
 
 ## Compiling
 

@@ -4,12 +4,10 @@ import Browser
 import Html exposing (..)
 import Html.Events exposing (..)
 import Html.Attributes exposing (..)
+import List as L
 
 {-
 Website update plan:
-* start using elm properly e.g. model is just what changes, and we have views of that
-    - make viewSocials function
-    - fill in socials
 * add the things your website needs:
     - interests
     - link to PLRG
@@ -50,6 +48,7 @@ type alias Details =
 type alias Social =
     { name : String
     , website : String
+    , pic : String
     }
 
 fixedInfo : Details
@@ -58,9 +57,24 @@ fixedInfo = Details
     "Programming Languages PhD Student"
     "University of Bristol"
     ""
-    []
-    -- TODO fill in social info
-    -- Social "LinkedIn" "https://www.linkedin.com/in/samantha-frohlich-a09a1b158"
+    [ Social
+        "LinkedIn"
+        "https://www.linkedin.com/in/samantha-frohlich-a09a1b158"
+        "Content/Images/linkedin.svg"
+    , Social
+        "Email"
+        "mailto:samantha.frohlich@bristol.ac.uk"
+        "Content/Images/envelope.svg"
+    , Social
+        "GitHub"
+        "https://github.com/SamFrohlich"
+        "Content/Images/github.svg"
+    , Social
+        "ORCiD"
+        "https://orcid.org/0000-0002-4423-6918"
+        "Content/Images/orcid.svg"
+    ]
+
 
 -- -----------------------------------------------------------------------------
 -- Model
@@ -103,31 +117,14 @@ view _ =
         , p []
             [ text fixedInfo.institution ]
           -- Socials:
-          -- TODO write a viewSocials that will create this from fixedInfo
-        , p [class "socials"]
-            [ a [ href "https://www.linkedin.com/in/samantha-frohlich-a09a1b158" ]
-                [ img [ src "Content/Images/linkedin.svg"
-                      , width 30, height 30
-                      , alt "LinkedIn"
-                      , title "LinkedIn"]
-                      [] ]
-            , a [ href "mailto:samantha.frohlich@bristol.ac.uk" ]
-                [ img [ src "Content/Images/envelope.svg"
-                      , width 30, height 30
-                      , alt "Email"
-                      , title "Email" ]
-                      [] ]
-            , a [ href "https://github.com/SamFrohlich" ]
-                [ img [ src "Content/Images/github.svg"
-                      , width 30, height 30
-                      , alt "GitHub"
-                      , title "GitHub" ]
-                      [] ]
-            , a [ href "https://orcid.org/0000-0002-4423-6918" ]
-                [ img [ src "Content/Images/orcid.svg"
-                      , width 30, height 30
-                      , alt "ORCiD"
-                      , title "ORCiD"]
-                      [] ]
-            ]
+        , p [class "socials"] (L.map viewSocial fixedInfo.socials)
     ]
+
+viewSocial : Social -> Html Msg
+viewSocial s
+    = a [ href s.website ]
+        [ img [ src s.pic
+                , width 30, height 30
+                , alt s.name
+                , title s.name]
+                [] ]
