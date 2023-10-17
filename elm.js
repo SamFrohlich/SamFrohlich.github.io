@@ -5155,7 +5155,6 @@ var $author$project$Main$update = F2(
 	function (msg, _v0) {
 		return _Utils_Tuple2(_Utils_Tuple0, $elm$core$Platform$Cmd$none);
 	});
-var $elm$html$Html$a = _VirtualDom_node('a');
 var $elm$json$Json$Encode$string = _Json_wrap;
 var $elm$html$Html$Attributes$stringProperty = F2(
 	function (key, string) {
@@ -5164,26 +5163,36 @@ var $elm$html$Html$Attributes$stringProperty = F2(
 			key,
 			$elm$json$Json$Encode$string(string));
 	});
-var $elm$html$Html$Attributes$alt = $elm$html$Html$Attributes$stringProperty('alt');
 var $elm$html$Html$Attributes$class = $elm$html$Html$Attributes$stringProperty('className');
 var $elm$html$Html$div = _VirtualDom_node('div');
 var $author$project$Main$Details = F5(
-	function (name, position, institution, interest, socials) {
-		return {institution: institution, interest: interest, name: name, position: position, socials: socials};
+	function (name, position, institution, interests, socials) {
+		return {institution: institution, interests: interests, name: name, position: position, socials: socials};
 	});
-var $author$project$Main$fixedInfo = A5($author$project$Main$Details, 'Sam Frohlich', 'Programming Languages PhD Student', 'University of Bristol', '', _List_Nil);
+var $author$project$Main$Social = F3(
+	function (name, website, pic) {
+		return {name: name, pic: pic, website: website};
+	});
+var $author$project$Main$fixedInfo = A5(
+	$author$project$Main$Details,
+	'Sam Frohlich',
+	'Programming Languages PhD Student',
+	'University of Bristol',
+	_List_fromArray(
+		['Bidirectional programming', 'Embembedded domain specific languages', 'Functional programming', 'Language design']),
+	_List_fromArray(
+		[
+			A3($author$project$Main$Social, 'LinkedIn', 'https://www.linkedin.com/in/samantha-frohlich-a09a1b158', 'Content/Images/linkedin.svg'),
+			A3($author$project$Main$Social, 'Email', 'mailto:samantha.frohlich@bristol.ac.uk', 'Content/Images/envelope.svg'),
+			A3($author$project$Main$Social, 'GitHub', 'https://github.com/SamFrohlich', 'Content/Images/github.svg'),
+			A3($author$project$Main$Social, 'ORCiD', 'https://orcid.org/0000-0002-4423-6918', 'Content/Images/orcid.svg')
+		]));
 var $elm$html$Html$h1 = _VirtualDom_node('h1');
 var $elm$html$Html$Attributes$height = function (n) {
 	return A2(
 		_VirtualDom_attribute,
 		'height',
 		$elm$core$String$fromInt(n));
-};
-var $elm$html$Html$Attributes$href = function (url) {
-	return A2(
-		$elm$html$Html$Attributes$stringProperty,
-		'href',
-		_VirtualDom_noJavaScriptUri(url));
 };
 var $elm$html$Html$img = _VirtualDom_node('img');
 var $elm$html$Html$p = _VirtualDom_node('p');
@@ -5193,14 +5202,70 @@ var $elm$html$Html$Attributes$src = function (url) {
 		'src',
 		_VirtualDom_noJavaScriptOrHtmlUri(url));
 };
+var $elm$html$Html$strong = _VirtualDom_node('strong');
 var $elm$virtual_dom$VirtualDom$text = _VirtualDom_text;
 var $elm$html$Html$text = $elm$virtual_dom$VirtualDom$text;
+var $elm$html$Html$li = _VirtualDom_node('li');
+var $elm$virtual_dom$VirtualDom$style = _VirtualDom_style;
+var $elm$html$Html$Attributes$style = $elm$virtual_dom$VirtualDom$style;
+var $elm$html$Html$ul = _VirtualDom_node('ul');
+var $author$project$Main$viewResearchInts = function (lst) {
+	return A2(
+		$elm$html$Html$ul,
+		_List_fromArray(
+			[
+				A2($elm$html$Html$Attributes$style, 'list-style-type', 'none'),
+				A2($elm$html$Html$Attributes$style, 'padding-left', '2rem')
+			]),
+		A2(
+			$elm$core$List$map,
+			function (l) {
+				return A2(
+					$elm$html$Html$li,
+					_List_Nil,
+					_List_fromArray(
+						[
+							$elm$html$Html$text(l)
+						]));
+			},
+			lst));
+};
+var $elm$html$Html$a = _VirtualDom_node('a');
+var $elm$html$Html$Attributes$alt = $elm$html$Html$Attributes$stringProperty('alt');
+var $elm$html$Html$Attributes$href = function (url) {
+	return A2(
+		$elm$html$Html$Attributes$stringProperty,
+		'href',
+		_VirtualDom_noJavaScriptUri(url));
+};
 var $elm$html$Html$Attributes$title = $elm$html$Html$Attributes$stringProperty('title');
 var $elm$html$Html$Attributes$width = function (n) {
 	return A2(
 		_VirtualDom_attribute,
 		'width',
 		$elm$core$String$fromInt(n));
+};
+var $author$project$Main$viewSocial = function (s) {
+	return A2(
+		$elm$html$Html$a,
+		_List_fromArray(
+			[
+				$elm$html$Html$Attributes$href(s.website)
+			]),
+		_List_fromArray(
+			[
+				A2(
+				$elm$html$Html$img,
+				_List_fromArray(
+					[
+						$elm$html$Html$Attributes$src(s.pic),
+						$elm$html$Html$Attributes$width(30),
+						$elm$html$Html$Attributes$height(30),
+						$elm$html$Html$Attributes$alt(s.name),
+						$elm$html$Html$Attributes$title(s.name)
+					]),
+				_List_Nil)
+			]));
 };
 var $author$project$Main$view = function (_v0) {
 	return A2(
@@ -5242,94 +5307,20 @@ var $author$project$Main$view = function (_v0) {
 						$elm$html$Html$text($author$project$Main$fixedInfo.institution)
 					])),
 				A2(
+				$elm$html$Html$strong,
+				_List_Nil,
+				_List_fromArray(
+					[
+						$elm$html$Html$text('Research Interests:')
+					])),
+				$author$project$Main$viewResearchInts($author$project$Main$fixedInfo.interests),
+				A2(
 				$elm$html$Html$p,
 				_List_fromArray(
 					[
 						$elm$html$Html$Attributes$class('socials')
 					]),
-				_List_fromArray(
-					[
-						A2(
-						$elm$html$Html$a,
-						_List_fromArray(
-							[
-								$elm$html$Html$Attributes$href('https://www.linkedin.com/in/samantha-frohlich-a09a1b158')
-							]),
-						_List_fromArray(
-							[
-								A2(
-								$elm$html$Html$img,
-								_List_fromArray(
-									[
-										$elm$html$Html$Attributes$src('Content/Images/linkedin.svg'),
-										$elm$html$Html$Attributes$width(30),
-										$elm$html$Html$Attributes$height(30),
-										$elm$html$Html$Attributes$alt('LinkedIn'),
-										$elm$html$Html$Attributes$title('LinkedIn')
-									]),
-								_List_Nil)
-							])),
-						A2(
-						$elm$html$Html$a,
-						_List_fromArray(
-							[
-								$elm$html$Html$Attributes$href('mailto:samantha.frohlich@bristol.ac.uk')
-							]),
-						_List_fromArray(
-							[
-								A2(
-								$elm$html$Html$img,
-								_List_fromArray(
-									[
-										$elm$html$Html$Attributes$src('Content/Images/envelope.svg'),
-										$elm$html$Html$Attributes$width(30),
-										$elm$html$Html$Attributes$height(30),
-										$elm$html$Html$Attributes$alt('Email'),
-										$elm$html$Html$Attributes$title('Email')
-									]),
-								_List_Nil)
-							])),
-						A2(
-						$elm$html$Html$a,
-						_List_fromArray(
-							[
-								$elm$html$Html$Attributes$href('https://github.com/SamFrohlich')
-							]),
-						_List_fromArray(
-							[
-								A2(
-								$elm$html$Html$img,
-								_List_fromArray(
-									[
-										$elm$html$Html$Attributes$src('Content/Images/github.svg'),
-										$elm$html$Html$Attributes$width(30),
-										$elm$html$Html$Attributes$height(30),
-										$elm$html$Html$Attributes$alt('GitHub'),
-										$elm$html$Html$Attributes$title('GitHub')
-									]),
-								_List_Nil)
-							])),
-						A2(
-						$elm$html$Html$a,
-						_List_fromArray(
-							[
-								$elm$html$Html$Attributes$href('https://orcid.org/0000-0002-4423-6918')
-							]),
-						_List_fromArray(
-							[
-								A2(
-								$elm$html$Html$img,
-								_List_fromArray(
-									[
-										$elm$html$Html$Attributes$src('Content/Images/orcid.svg'),
-										$elm$html$Html$Attributes$width(30),
-										$elm$html$Html$Attributes$height(30),
-										$elm$html$Html$Attributes$alt('ORCiD'),
-										$elm$html$Html$Attributes$title('ORCiD')
-									]),
-								_List_Nil)
-							]))
-					]))
+				A2($elm$core$List$map, $author$project$Main$viewSocial, $author$project$Main$fixedInfo.socials))
 			]));
 };
 var $author$project$Main$main = $elm$browser$Browser$element(

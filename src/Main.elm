@@ -10,6 +10,7 @@ import List as L
 Website update plan:
 * add the things your website needs:
     - interests
+    - about me
     - link to PLRG
     - publications (publiocation record and view publication function, you'll want the cite, the pdf, the talk, the video)
     ? teaching stuff
@@ -41,7 +42,7 @@ type alias Details =
     { name : String
     , position : String
     , institution : String
-    , interest : String
+    , interests : List String
     , socials : List Social
     }
 
@@ -56,7 +57,7 @@ fixedInfo = Details
     "Sam Frohlich"
     "Programming Languages PhD Student"
     "University of Bristol"
-    ""
+    ["Bidirectional programming", "Embembedded domain specific languages", "Functional programming", "Language design"]
     [ Social
         "LinkedIn"
         "https://www.linkedin.com/in/samantha-frohlich-a09a1b158"
@@ -116,6 +117,9 @@ view _ =
             [ text fixedInfo.position ]
         , p []
             [ text fixedInfo.institution ]
+          -- About Me:
+        , strong [] [text "Research Interests:"]
+        , viewResearchInts fixedInfo.interests
           -- Socials:
         , p [class "socials"] (L.map viewSocial fixedInfo.socials)
     ]
@@ -128,3 +132,8 @@ viewSocial s
                 , alt s.name
                 , title s.name]
                 [] ]
+
+viewResearchInts : List String -> Html msg
+viewResearchInts lst =
+    ul [style "list-style-type" "none", style "padding-left" "2rem"]
+        (List.map (\l -> li [] [ text l ]) lst)
