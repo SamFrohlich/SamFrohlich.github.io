@@ -5,13 +5,11 @@ import Html exposing (..)
 import Html.Events exposing (..)
 import Html.Attributes exposing (..)
 import List as L
+import Markdown
 
 {-
 Website update plan:
 * add the things your website needs:
-    - interests
-    - about me
-    - link to PLRG
     - publications (publiocation record and view publication function, you'll want the cite, the pdf, the talk, the video)
     ? teaching stuff
 * take advantage of elm
@@ -43,6 +41,7 @@ type alias Details =
     , position : String
     , institution : String
     , interests : List String
+    , aboutMe : String
     , socials : List Social
     }
 
@@ -58,6 +57,7 @@ fixedInfo = Details
     "Programming Languages PhD Student"
     "University of Bristol"
     ["Bidirectional programming", "Embembedded domain specific languages", "Functional programming", "Language design"]
+    "My name is Sam (she/her), and I'm a PhD Student at the [University of Bristol](https://www.bristol.ac.uk/), in the [Programming Languages Research Group](https://plrg-bristol.github.io/), supervised by [Meng Wang](https://mengwangoxf.github.io/). I'm a highly creative researcher (you'll never see me with LaTeX slides) and love teaching. <br> Fun fact about me: I have represented Scotland internationally at [quadball](https://quadballuk.org/programmes/team-scotland) as their captain!"
     [ Social
         "LinkedIn"
         "https://www.linkedin.com/in/samantha-frohlich-a09a1b158"
@@ -120,6 +120,7 @@ view _ =
           -- About Me:
         , strong [] [text "Research Interests:"]
         , viewResearchInts fixedInfo.interests
+        , p [style "padding" "0 10%"] (Markdown.toHtml Nothing fixedInfo.aboutMe)
           -- Socials:
         , p [class "socials"] (L.map viewSocial fixedInfo.socials)
     ]
