@@ -5320,30 +5320,41 @@ var $elm$html$Html$Attributes$stringProperty = F2(
 	});
 var $elm$html$Html$Attributes$class = $elm$html$Html$Attributes$stringProperty('className');
 var $elm$html$Html$div = _VirtualDom_node('div');
-var $author$project$Main$Details = F6(
-	function (name, position, institution, interests, aboutMe, socials) {
-		return {aboutMe: aboutMe, institution: institution, interests: interests, name: name, position: position, socials: socials};
+var $author$project$Main$Details = F7(
+	function (name, position, institution, interests, aboutMe, socials, pubs) {
+		return {aboutMe: aboutMe, institution: institution, interests: interests, name: name, position: position, pubs: pubs, socials: socials};
+	});
+var $author$project$Main$Publication = F6(
+	function (title, authors, venue, coreRanking, paperLink, presentationLink) {
+		return {authors: authors, coreRanking: coreRanking, paperLink: paperLink, presentationLink: presentationLink, title: title, venue: venue};
 	});
 var $author$project$Main$Social = F3(
 	function (name, website, pic) {
 		return {name: name, pic: pic, website: website};
 	});
-var $author$project$Main$fixedInfo = A6(
+var $author$project$Main$fixedInfo = A7(
 	$author$project$Main$Details,
 	'Sam Frohlich',
 	'Programming Languages PhD Student',
 	'University of Bristol',
 	_List_fromArray(
 		['Bidirectional programming', 'Embembedded domain specific languages', 'Functional programming', 'Language design']),
-	'My name is Sam (she/her), and I\'m a PhD Student at the [University of Bristol](https://www.bristol.ac.uk/), in the [Programming Languages Research Group](https://plrg-bristol.github.io/), supervised by [Meng Wang](https://mengwangoxf.github.io/). I\'m a highly creative researcher (you\'ll never see me with LaTeX slides) and love teaching. <br> Fun fact about me: I have represented Scotland internationally at [quadball](https://quadballuk.org/programmes/team-scotland) as their captain!',
+	'My name is Sam (she/her), and I\'m a PhD Student at the [University of Bristol](https://www.bristol.ac.uk/), in the [Programming Languages Research Group](https://plrg-bristol.github.io/), supervised by [Meng Wang](https://mengwangoxf.github.io/). I\'m a highly creative researcher (you\'ll never see me with LaTeX slides) and I love teaching. <br> Fun fact about me: I have represented Scotland internationally at [quadball](https://quadballuk.org/programmes/team-scotland) as their captain!',
 	_List_fromArray(
 		[
+			A3($author$project$Main$Social, 'ORCiD', 'https://orcid.org/0000-0002-4423-6918', 'Content/Images/orcid.svg'),
 			A3($author$project$Main$Social, 'LinkedIn', 'https://www.linkedin.com/in/samantha-frohlich-a09a1b158', 'Content/Images/linkedin.svg'),
 			A3($author$project$Main$Social, 'Email', 'mailto:samantha.frohlich@bristol.ac.uk', 'Content/Images/envelope.svg'),
-			A3($author$project$Main$Social, 'GitHub', 'https://github.com/SamFrohlich', 'Content/Images/github.svg'),
-			A3($author$project$Main$Social, 'ORCiD', 'https://orcid.org/0000-0002-4423-6918', 'Content/Images/orcid.svg')
+			A3($author$project$Main$Social, 'GitHub', 'https://github.com/SamFrohlich', 'Content/Images/github.svg')
+		]),
+	_List_fromArray(
+		[
+			A6($author$project$Main$Publication, 'Embedding by Unembedding', 'Kazutaka Matsuda, Samantha Frohlich, Meng Wang, Nick Wu', 'ICFP 2023', 'A', 'Content/Papers/EmbeddingByUnembedding.pdf', 'https://www.youtube.com/watch?v=ZQ_U-LANbc4&t=12028s'),
+			A6($author$project$Main$Publication, 'Reflecting on Random Generation (Distinguished Paper)', 'Harrison Goldstein, Samantha Frohlich, Meng Wang, Benjamin C. Pierce', 'ICFP 2023', 'A', 'Content/Papers/ReflectingOnRandomGeneration.pdf', 'https://www.youtube.com/watch?v=ZQ_U-LANbc4&t=1316s'),
+			A6($author$project$Main$Publication, 'CircuitFlow: A Domain Specific Language for Dataflow Programming', 'Riley Evans, Samantha Frohlich, Meng Wang', 'PADL 2022', 'B', 'Content/Papers/CircuitFlow.pdf', 'https://www.youtube.com/watch?v=LGaTnxYcdm4')
 		]));
 var $elm$html$Html$h1 = _VirtualDom_node('h1');
+var $elm$html$Html$h2 = _VirtualDom_node('h2');
 var $elm$html$Html$Attributes$height = function (n) {
 	return A2(
 		_VirtualDom_attribute,
@@ -5352,6 +5363,7 @@ var $elm$html$Html$Attributes$height = function (n) {
 };
 var $elm$html$Html$img = _VirtualDom_node('img');
 var $elm$html$Html$p = _VirtualDom_node('p');
+var $elm$html$Html$small = _VirtualDom_node('small');
 var $elm$html$Html$Attributes$src = function (url) {
 	return A2(
 		$elm$html$Html$Attributes$stringProperty,
@@ -9293,7 +9305,6 @@ var $pablohirafuji$elm_markdown$Markdown$Block$parse = function (maybeOptions) {
 };
 var $elm$html$Html$blockquote = _VirtualDom_node('blockquote');
 var $elm$html$Html$code = _VirtualDom_node('code');
-var $elm$html$Html$h2 = _VirtualDom_node('h2');
 var $elm$html$Html$h3 = _VirtualDom_node('h3');
 var $elm$html$Html$h4 = _VirtualDom_node('h4');
 var $elm$html$Html$h5 = _VirtualDom_node('h5');
@@ -9665,6 +9676,33 @@ var $pablohirafuji$elm_markdown$Markdown$toHtml = F2(
 				$pablohirafuji$elm_markdown$Markdown$Block$toHtml,
 				A2($pablohirafuji$elm_markdown$Markdown$Block$parse, maybeOptions, rawText)));
 	});
+var $author$project$Main$viewPub = function (pub) {
+	return A2(
+		$elm$html$Html$div,
+		_List_Nil,
+		_List_fromArray(
+			[
+				A2(
+				$elm$html$Html$em,
+				_List_Nil,
+				_List_fromArray(
+					[
+						$elm$html$Html$text(pub.title)
+					])),
+				A2(
+				$elm$html$Html$p,
+				_List_Nil,
+				_Utils_ap(
+					_List_fromArray(
+						[
+							$elm$html$Html$text(pub.authors),
+							A2($elm$html$Html$br, _List_Nil, _List_Nil),
+							$elm$html$Html$text(pub.venue + (' (Core Ranking: ' + (pub.coreRanking + ')'))),
+							A2($elm$html$Html$br, _List_Nil, _List_Nil)
+						]),
+					A2($pablohirafuji$elm_markdown$Markdown$toHtml, $elm$core$Maybe$Nothing, '([Paper](' + (pub.paperLink + ('), [Talk](' + (pub.presentationLink + '))'))))))
+			]));
+};
 var $author$project$Main$viewResearchInts = function (lst) {
 	return A2(
 		$elm$html$Html$ul,
@@ -9737,7 +9775,14 @@ var $author$project$Main$view = function (_v0) {
 				_List_Nil,
 				_List_fromArray(
 					[
-						$elm$html$Html$text($author$project$Main$fixedInfo.name)
+						$elm$html$Html$text($author$project$Main$fixedInfo.name),
+						A2(
+						$elm$html$Html$small,
+						_List_Nil,
+						_List_fromArray(
+							[
+								$elm$html$Html$text(' (she/her)')
+							]))
 					])),
 				A2(
 				$elm$html$Html$p,
@@ -9765,9 +9810,20 @@ var $author$project$Main$view = function (_v0) {
 				$elm$html$Html$p,
 				_List_fromArray(
 					[
-						A2($elm$html$Html$Attributes$style, 'padding', '0 10%')
+						A2($elm$html$Html$Attributes$style, 'padding', '0 20%')
 					]),
 				A2($pablohirafuji$elm_markdown$Markdown$toHtml, $elm$core$Maybe$Nothing, $author$project$Main$fixedInfo.aboutMe)),
+				A2(
+				$elm$html$Html$h2,
+				_List_Nil,
+				_List_fromArray(
+					[
+						$elm$html$Html$text('Publications:')
+					])),
+				A2(
+				$elm$html$Html$p,
+				_List_Nil,
+				A2($elm$core$List$map, $author$project$Main$viewPub, $author$project$Main$fixedInfo.pubs)),
 				A2(
 				$elm$html$Html$p,
 				_List_fromArray(

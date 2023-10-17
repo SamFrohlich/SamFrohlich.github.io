@@ -10,7 +10,7 @@ import Markdown
 {-
 Website update plan:
 * add the things your website needs:
-    - publications (publiocation record and view publication function, you'll want the cite, the pdf, the talk, the video)
+    - awards (SRC)
     ? teaching stuff
 * take advantage of elm
     - get some cute animations
@@ -43,6 +43,7 @@ type alias Details =
     , interests : List String
     , aboutMe : String
     , socials : List Social
+    , pubs : List Publication
     }
 
 type alias Social =
@@ -51,14 +52,27 @@ type alias Social =
     , pic : String
     }
 
+type alias Publication =
+    { title : String
+    , authors : String
+    , venue : String
+    , coreRanking : String
+    , paperLink : String
+    , presentationLink : String
+    }
+
 fixedInfo : Details
 fixedInfo = Details
     "Sam Frohlich"
     "Programming Languages PhD Student"
     "University of Bristol"
     ["Bidirectional programming", "Embembedded domain specific languages", "Functional programming", "Language design"]
-    "My name is Sam (she/her), and I'm a PhD Student at the [University of Bristol](https://www.bristol.ac.uk/), in the [Programming Languages Research Group](https://plrg-bristol.github.io/), supervised by [Meng Wang](https://mengwangoxf.github.io/). I'm a highly creative researcher (you'll never see me with LaTeX slides) and love teaching. <br> Fun fact about me: I have represented Scotland internationally at [quadball](https://quadballuk.org/programmes/team-scotland) as their captain!"
+    "My name is Sam (she/her), and I'm a PhD Student at the [University of Bristol](https://www.bristol.ac.uk/), in the [Programming Languages Research Group](https://plrg-bristol.github.io/), supervised by [Meng Wang](https://mengwangoxf.github.io/). I'm a highly creative researcher (you'll never see me with LaTeX slides) and I love teaching. <br> Fun fact about me: I have represented Scotland internationally at [quadball](https://quadballuk.org/programmes/team-scotland) as their captain!"
     [ Social
+        "ORCiD"
+        "https://orcid.org/0000-0002-4423-6918"
+        "Content/Images/orcid.svg"
+    , Social
         "LinkedIn"
         "https://www.linkedin.com/in/samantha-frohlich-a09a1b158"
         "Content/Images/linkedin.svg"
@@ -70,10 +84,28 @@ fixedInfo = Details
         "GitHub"
         "https://github.com/SamFrohlich"
         "Content/Images/github.svg"
-    , Social
-        "ORCiD"
-        "https://orcid.org/0000-0002-4423-6918"
-        "Content/Images/orcid.svg"
+    ]
+    [ Publication
+        "Embedding by Unembedding"
+        "Kazutaka Matsuda, Samantha Frohlich, Meng Wang, Nick Wu"
+        "ICFP 2023"
+        "A"
+        "Content/Papers/EmbeddingByUnembedding.pdf"
+        "https://www.youtube.com/watch?v=ZQ_U-LANbc4&t=12028s"
+    , Publication
+        "Reflecting on Random Generation (Distinguished Paper)"
+        "Harrison Goldstein, Samantha Frohlich, Meng Wang, Benjamin C. Pierce"
+        "ICFP 2023"
+        "A"
+        "Content/Papers/ReflectingOnRandomGeneration.pdf"
+        "https://www.youtube.com/watch?v=ZQ_U-LANbc4&t=1316s"
+    , Publication
+        "CircuitFlow: A Domain Specific Language for Dataflow Programming"
+        "Riley Evans, Samantha Frohlich, Meng Wang"
+        "PADL 2022"
+        "B"
+        "Content/Papers/CircuitFlow.pdf"
+        "https://www.youtube.com/watch?v=LGaTnxYcdm4"
     ]
 
 
@@ -111,17 +143,20 @@ view _ =
     -- TODO:- make me reactive
         [ -- Photo:
           img [ src "Content/Images/me.jpg", width 200, height 200 ] []
-          -- Details:
-        , h1 [] [ text fixedInfo.name ]
+        -- Details:
+        , h1 [] [ text fixedInfo.name , small [] [text " (she/her)"]]
         , p []
             [ text fixedInfo.position ]
         , p []
             [ text fixedInfo.institution ]
-          -- About Me:
+        -- About Me:
         , strong [] [text "Research Interests:"]
         , viewResearchInts fixedInfo.interests
-        , p [style "padding" "0 10%"] (Markdown.toHtml Nothing fixedInfo.aboutMe)
-          -- Socials:
+        , p [style "padding" "0 20%"] (Markdown.toHtml Nothing fixedInfo.aboutMe)
+        -- Publications
+        , h2 [] [text "Publications:"]
+        , p [] (L.map viewPub fixedInfo.pubs)
+        -- Socials:
         , p [class "socials"] (L.map viewSocial fixedInfo.socials)
     ]
 
@@ -138,3 +173,13 @@ viewResearchInts : List String -> Html msg
 viewResearchInts lst =
     ul [style "list-style-type" "none", style "padding-left" "2rem"]
         (List.map (\l -> li [] [ text l ]) lst)
+
+viewPub : Publication -> Html msg
+viewPub pub = div []
+    [ em [] [text pub.title]
+    , p [] ([ text pub.authors
+           , br [] []
+           , text (pub.venue ++ " (Core Ranking: " ++ pub.coreRanking ++ ")")
+           , br [] []]
+           ++ (Markdown.toHtml Nothing ("([Paper](" ++ pub.paperLink ++ "), [Talk](" ++ pub.presentationLink ++ "))")))
+    ]
