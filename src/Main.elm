@@ -65,7 +65,7 @@ fixedInfo = Details
     "Sam Frohlich"
     "Programming Languages PhD Student"
     "University of Bristol"
-    ["Bidirectional programming", "Embembedded domain specific languages", "Functional programming", "Language design"]
+    ["Bidirectional programming", "Embedded domain specific languages", "Functional programming", "Language design"]
     "My name is Sam (she/her), and I'm a PhD Student at the [University of Bristol](https://www.bristol.ac.uk/), in the [Programming Languages Research Group](https://plrg-bristol.github.io/), supervised by [Meng Wang](https://mengwangoxf.github.io/). I'm a highly creative researcher (you'll never see me with LaTeX slides) and I love teaching. <br> Fun fact about me: I have represented Scotland internationally at [quadball](https://quadballuk.org/programmes/team-scotland) as their captain!"
     [ Social
         "ORCiD"
@@ -161,7 +161,6 @@ view _ =
                 , dt [] [text "2020"], dd [] [text "EPSRC Doctoral Training Partnership Studentship"]
                 , dt [] [text "2019"], dd [] [text "ICFP 2019 SRC, Undergraduate Category, 1st Place"]
                 ]
-            -- distyibyushed, src
         -- Socials:
         , p [class "socials"] (L.map viewSocial fixedInfo.socials)
     ]
