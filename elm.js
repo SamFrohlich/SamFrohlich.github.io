@@ -5323,9 +5323,9 @@ var $elm$html$Html$dd = _VirtualDom_node('dd');
 var $elm$html$Html$div = _VirtualDom_node('div');
 var $elm$html$Html$dl = _VirtualDom_node('dl');
 var $elm$html$Html$dt = _VirtualDom_node('dt');
-var $author$project$Main$Details = F7(
-	function (name, position, institution, interests, aboutMe, socials, pubs) {
-		return {aboutMe: aboutMe, institution: institution, interests: interests, name: name, position: position, pubs: pubs, socials: socials};
+var $author$project$Main$Details = F9(
+	function (name, position, institution, interests, aboutMe, socials, pubs, talks, teaching) {
+		return {aboutMe: aboutMe, institution: institution, interests: interests, name: name, position: position, pubs: pubs, socials: socials, talks: talks, teaching: teaching};
 	});
 var $author$project$Main$Publication = F6(
 	function (title, authors, venue, coreRanking, paperLink, presentationLink) {
@@ -5335,14 +5335,22 @@ var $author$project$Main$Social = F3(
 	function (name, website, pic) {
 		return {name: name, pic: pic, website: website};
 	});
-var $author$project$Main$fixedInfo = A7(
+var $author$project$Main$Talk = F5(
+	function (title, presenters, venue, slidesLink, videoLink) {
+		return {presenters: presenters, slidesLink: slidesLink, title: title, venue: venue, videoLink: videoLink};
+	});
+var $author$project$Main$Teaching = F3(
+	function (title, year, websiteLink) {
+		return {title: title, websiteLink: websiteLink, year: year};
+	});
+var $author$project$Main$fixedInfo = A9(
 	$author$project$Main$Details,
 	'Sam Frohlich',
-	'Programming Languages PhD Student',
+	'Lecturer',
 	'University of Bristol',
 	_List_fromArray(
 		['Bidirectional programming', 'Embedded domain specific languages', 'Functional programming', 'Language design']),
-	'My name is Sam (she/her), and I\'m a PhD Student at the [University of Bristol](https://www.bristol.ac.uk/), in the [Programming Languages Research Group](https://plrg-bristol.github.io/), supervised by [Meng Wang](https://mengwangoxf.github.io/). I\'m a highly creative researcher (you\'ll never see me with LaTeX slides) and I love teaching. <br> Fun fact about me: I have represented Scotland internationally at [quadball](https://quadballuk.org/programmes/team-scotland) as their captain!',
+	'My name is Sam (she/her), and I\'m a part-time lecturer at the [University of Bristol](https://www.bristol.ac.uk/) in the [Programming Languages Research Group](https://plrg-bristol.github.io/). In the other half of my time, I\'m finishing my PhD supervised by [Meng Wang](https://mengwangoxf.github.io/). I\'m a highly creative researcher (you\'ll never see me with LaTeX slides) and I love teaching. <br> Fun fact about me: I have represented Scotland internationally at [quadball](https://quadballuk.org/programmes/team-scotland) as their captain!',
 	_List_fromArray(
 		[
 			A3($author$project$Main$Social, 'ORCiD', 'https://orcid.org/0000-0002-4423-6918', 'Content/Images/orcid.svg'),
@@ -5352,9 +5360,19 @@ var $author$project$Main$fixedInfo = A7(
 		]),
 	_List_fromArray(
 		[
-			A6($author$project$Main$Publication, 'Embedding by Unembedding', 'Kazutaka Matsuda, Samantha Frohlich, Meng Wang, Nick Wu', 'ICFP 2023', 'A', 'Content/Papers/EmbeddingByUnembedding.pdf', 'https://www.youtube.com/watch?v=ZQ_U-LANbc4&t=12028s'),
-			A6($author$project$Main$Publication, 'Reflecting on Random Generation (Distinguished Paper)', 'Harrison Goldstein, Samantha Frohlich, Meng Wang, Benjamin C. Pierce', 'ICFP 2023', 'A', 'Content/Papers/ReflectingOnRandomGeneration.pdf', 'https://www.youtube.com/watch?v=ZQ_U-LANbc4&t=1316s'),
+			A6($author$project$Main$Publication, 'Embedding by Unembedding', 'Kazutaka Matsuda, Samantha Frohlich, Meng Wang, Nick Wu', 'ICFP 2023', 'A', 'Content/Papers/EmbeddingByUnembedding.pdf', 'https://youtu.be/9vtoJrZxa0k?si=Fjdf1NevPgpIb4g4'),
+			A6($author$project$Main$Publication, 'Reflecting on Random Generation (Distinguished Paper)', 'Harrison Goldstein, Samantha Frohlich, Meng Wang, Benjamin C. Pierce', 'ICFP 2023', 'A', 'Content/Papers/ReflectingOnRandomGeneration.pdf', 'https://youtu.be/iutt_BKLgDk?si=0tUq7ZT5HymJq2Hr'),
 			A6($author$project$Main$Publication, 'CircuitFlow: A Domain Specific Language for Dataflow Programming', 'Riley Evans, Samantha Frohlich, Meng Wang', 'PADL 2022', 'B', 'Content/Papers/CircuitFlow.pdf', 'https://www.youtube.com/watch?v=LGaTnxYcdm4')
+		]),
+	_List_fromArray(
+		[
+			A5($author$project$Main$Talk, 'Consider Collaboration', 'Samantha Frohlich, Harrison Goldstein', 'PLMW@POPL24', 'https://docs.google.com/presentation/d/1HrdGtbl5EW4M0XZ3hZJmi72lMAb2jrjcY_lXdcRzrjY/edit?usp=sharing', 'https://youtu.be/sSl-856qUOA?si=eDFwmkAMMG2_ejUl'),
+			A5($author$project$Main$Talk, 'Getting the Most Out of ICFP', 'Samantha Frohlich', 'PLMW@ICFP24', 'https://docs.google.com/presentation/d/1f53W7p2DlqpWQBbtYykaedsboNJyPEBIbD39WbDVbks/edit?usp=sharing', 'https://youtu.be/dQw4w9WgXcQ?si=W8lWx50M3nEehtz4')
+		]),
+	_List_fromArray(
+		[
+			A3($author$project$Main$Teaching, 'Advanced Topics in Programming Languages', '2024 / 2025', 'https://plrg-bristol.github.io/ATiPL/index.html'),
+			A3($author$project$Main$Teaching, 'Advanced Haskell', '2024', 'https://github.com/plrg-bristol/advanced-haskell-2024')
 		]));
 var $elm$html$Html$h1 = _VirtualDom_node('h1');
 var $elm$html$Html$h2 = _VirtualDom_node('h2');
@@ -9755,6 +9773,58 @@ var $author$project$Main$viewSocial = function (s) {
 				_List_Nil)
 			]));
 };
+var $author$project$Main$viewTalk = function (t) {
+	return A2(
+		$elm$html$Html$div,
+		_List_Nil,
+		_List_fromArray(
+			[
+				A2(
+				$elm$html$Html$em,
+				_List_Nil,
+				_List_fromArray(
+					[
+						$elm$html$Html$text(t.title)
+					])),
+				A2(
+				$elm$html$Html$p,
+				_List_Nil,
+				_Utils_ap(
+					_List_fromArray(
+						[
+							$elm$html$Html$text(t.presenters),
+							A2($elm$html$Html$br, _List_Nil, _List_Nil),
+							$elm$html$Html$text(t.venue),
+							A2($elm$html$Html$br, _List_Nil, _List_Nil)
+						]),
+					A2($pablohirafuji$elm_markdown$Markdown$toHtml, $elm$core$Maybe$Nothing, '([Slides](' + (t.slidesLink + ('), [Recording](' + (t.videoLink + '))'))))))
+			]));
+};
+var $author$project$Main$viewTeaching = function (t) {
+	return A2(
+		$elm$html$Html$div,
+		_List_Nil,
+		_List_fromArray(
+			[
+				A2(
+				$elm$html$Html$em,
+				_List_Nil,
+				_List_fromArray(
+					[
+						$elm$html$Html$text(t.title)
+					])),
+				A2(
+				$elm$html$Html$p,
+				_List_Nil,
+				_Utils_ap(
+					_List_fromArray(
+						[
+							$elm$html$Html$text(t.year),
+							A2($elm$html$Html$br, _List_Nil, _List_Nil)
+						]),
+					A2($pablohirafuji$elm_markdown$Markdown$toHtml, $elm$core$Maybe$Nothing, '([Website](' + (t.websiteLink + '))'))))
+			]));
+};
 var $author$project$Main$view = function (_v0) {
 	return A2(
 		$elm$html$Html$div,
@@ -9882,6 +9952,28 @@ var $author$project$Main$view = function (_v0) {
 								$elm$html$Html$text('ICFP 2019 SRC, Undergraduate Category, 1st Place')
 							]))
 					])),
+				A2(
+				$elm$html$Html$h2,
+				_List_Nil,
+				_List_fromArray(
+					[
+						$elm$html$Html$text('Talks:')
+					])),
+				A2(
+				$elm$html$Html$p,
+				_List_Nil,
+				A2($elm$core$List$map, $author$project$Main$viewTalk, $author$project$Main$fixedInfo.talks)),
+				A2(
+				$elm$html$Html$h2,
+				_List_Nil,
+				_List_fromArray(
+					[
+						$elm$html$Html$text('Teaching:')
+					])),
+				A2(
+				$elm$html$Html$p,
+				_List_Nil,
+				A2($elm$core$List$map, $author$project$Main$viewTeaching, $author$project$Main$fixedInfo.teaching)),
 				A2(
 				$elm$html$Html$p,
 				_List_fromArray(

@@ -43,6 +43,8 @@ type alias Details =
     , aboutMe : String
     , socials : List Social
     , pubs : List Publication
+    , talks : List Talk
+    , teaching : List Teaching
     }
 
 type alias Social =
@@ -60,13 +62,27 @@ type alias Publication =
     , presentationLink : String
     }
 
+type alias Talk =
+    { title : String
+    , presenters : String
+    , venue : String
+    , slidesLink : String
+    , videoLink : String
+    }
+
+type alias Teaching =
+    { title : String
+    , year : String
+    , websiteLink : String
+    }
+
 fixedInfo : Details
 fixedInfo = Details
     "Sam Frohlich"
-    "Programming Languages PhD Student"
+    "Lecturer"
     "University of Bristol"
     ["Bidirectional programming", "Embedded domain specific languages", "Functional programming", "Language design"]
-    "My name is Sam (she/her), and I'm a PhD Student at the [University of Bristol](https://www.bristol.ac.uk/), in the [Programming Languages Research Group](https://plrg-bristol.github.io/), supervised by [Meng Wang](https://mengwangoxf.github.io/). I'm a highly creative researcher (you'll never see me with LaTeX slides) and I love teaching. <br> Fun fact about me: I have represented Scotland internationally at [quadball](https://quadballuk.org/programmes/team-scotland) as their captain!"
+    "My name is Sam (she/her), and I'm a part-time lecturer at the [University of Bristol](https://www.bristol.ac.uk/) in the [Programming Languages Research Group](https://plrg-bristol.github.io/). In the other half of my time, I'm finishing my PhD supervised by [Meng Wang](https://mengwangoxf.github.io/). I'm a highly creative researcher (you'll never see me with LaTeX slides) and I love teaching. <br> Fun fact about me: I have represented Scotland internationally at [quadball](https://quadballuk.org/programmes/team-scotland) as their captain!"
     [ Social
         "ORCiD"
         "https://orcid.org/0000-0002-4423-6918"
@@ -90,14 +106,14 @@ fixedInfo = Details
         "ICFP 2023"
         "A"
         "Content/Papers/EmbeddingByUnembedding.pdf"
-        "https://www.youtube.com/watch?v=ZQ_U-LANbc4&t=12028s"
+        "https://youtu.be/9vtoJrZxa0k?si=Fjdf1NevPgpIb4g4"
     , Publication
         "Reflecting on Random Generation (Distinguished Paper)"
         "Harrison Goldstein, Samantha Frohlich, Meng Wang, Benjamin C. Pierce"
         "ICFP 2023"
         "A"
         "Content/Papers/ReflectingOnRandomGeneration.pdf"
-        "https://www.youtube.com/watch?v=ZQ_U-LANbc4&t=1316s"
+        "https://youtu.be/iutt_BKLgDk?si=0tUq7ZT5HymJq2Hr"
     , Publication
         "CircuitFlow: A Domain Specific Language for Dataflow Programming"
         "Riley Evans, Samantha Frohlich, Meng Wang"
@@ -105,6 +121,28 @@ fixedInfo = Details
         "B"
         "Content/Papers/CircuitFlow.pdf"
         "https://www.youtube.com/watch?v=LGaTnxYcdm4"
+    ]
+    [ Talk
+        "Consider Collaboration"
+        "Samantha Frohlich, Harrison Goldstein"
+        "PLMW@POPL24"
+        "https://docs.google.com/presentation/d/1HrdGtbl5EW4M0XZ3hZJmi72lMAb2jrjcY_lXdcRzrjY/edit?usp=sharing"
+        "https://youtu.be/sSl-856qUOA?si=eDFwmkAMMG2_ejUl"
+    , Talk
+        "Getting the Most Out of ICFP"
+        "Samantha Frohlich"
+        "PLMW@ICFP24"
+        "https://docs.google.com/presentation/d/1f53W7p2DlqpWQBbtYykaedsboNJyPEBIbD39WbDVbks/edit?usp=sharing"
+        "https://youtu.be/dQw4w9WgXcQ?si=W8lWx50M3nEehtz4"
+    ]
+    [ Teaching
+       "Advanced Topics in Programming Languages"
+       "2024 / 2025"
+       "https://plrg-bristol.github.io/ATiPL/index.html"
+    , Teaching
+        "Advanced Haskell"
+        "2024"
+        "https://github.com/plrg-bristol/advanced-haskell-2024"
     ]
 
 
@@ -161,6 +199,12 @@ view _ =
                 , dt [] [text "2020"], dd [] [text "EPSRC Doctoral Training Partnership Studentship"]
                 , dt [] [text "2019"], dd [] [text "ICFP 2019 SRC, Undergraduate Category, 1st Place"]
                 ]
+        -- Talks
+        , h2 [] [text "Talks:"]
+        , p [] (L.map viewTalk fixedInfo.talks)
+        -- Teaching
+        , h2 [] [text "Teaching:"]
+        , p [] (L.map viewTeaching fixedInfo.teaching)
         -- Socials:
         , p [class "socials"] (L.map viewSocial fixedInfo.socials)
     ]
@@ -187,4 +231,20 @@ viewPub pub = div []
            , text (pub.venue ++ " (Core Ranking: " ++ pub.coreRanking ++ ")")
            , br [] []]
            ++ (Markdown.toHtml Nothing ("([Paper](" ++ pub.paperLink ++ "), [Talk](" ++ pub.presentationLink ++ "))")))
+    ]
+viewTalk : Talk -> Html msg
+viewTalk t = div []
+    [ em [] [text t.title]
+    , p [] ([ text t.presenters
+           , br [] []
+           , text t.venue
+           , br [] []]
+           ++ (Markdown.toHtml Nothing ("([Slides](" ++ t.slidesLink ++ "), [Recording](" ++ t.videoLink ++ "))")))
+    ]
+viewTeaching : Teaching -> Html msg
+viewTeaching t = div []
+    [ em [] [text t.title]
+    , p [] ([ text t.year
+           , br [] []]
+           ++ (Markdown.toHtml Nothing ("([Website](" ++ t.websiteLink ++ "))")))
     ]
