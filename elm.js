@@ -5367,7 +5367,7 @@ var $author$project$Main$fixedInfo = A9(
 	_List_fromArray(
 		[
 			A5($author$project$Main$Talk, 'Consider Collaboration', 'Samantha Frohlich, Harrison Goldstein', 'PLMW@POPL24', 'https://docs.google.com/presentation/d/1HrdGtbl5EW4M0XZ3hZJmi72lMAb2jrjcY_lXdcRzrjY/edit?usp=sharing', 'https://youtu.be/sSl-856qUOA?si=eDFwmkAMMG2_ejUl'),
-			A5($author$project$Main$Talk, 'Getting the Most Out of ICFP', 'Samantha Frohlich', 'PLMW@ICFP24', 'https://docs.google.com/presentation/d/1f53W7p2DlqpWQBbtYykaedsboNJyPEBIbD39WbDVbks/edit?usp=sharing', 'https://youtu.be/dQw4w9WgXcQ?si=W8lWx50M3nEehtz4')
+			A5($author$project$Main$Talk, 'Getting the Most Out of ICFP', 'Samantha Frohlich', 'PLMW@ICFP24', 'https://docs.google.com/presentation/d/1f53W7p2DlqpWQBbtYykaedsboNJyPEBIbD39WbDVbks/edit?usp=sharing', 'https://www.youtube.com/watch?v=pS_vJAwjcM4&t=59m6s')
 		]),
 	_List_fromArray(
 		[

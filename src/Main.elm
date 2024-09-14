@@ -133,7 +133,7 @@ fixedInfo = Details
         "Samantha Frohlich"
         "PLMW@ICFP24"
         "https://docs.google.com/presentation/d/1f53W7p2DlqpWQBbtYykaedsboNJyPEBIbD39WbDVbks/edit?usp=sharing"
-        "https://youtu.be/dQw4w9WgXcQ?si=W8lWx50M3nEehtz4"
+        "https://www.youtube.com/watch?v=pS_vJAwjcM4&t=59m6s"
     ]
     [ Teaching
        "Advanced Topics in Programming Languages"
