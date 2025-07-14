@@ -5366,8 +5366,9 @@ var $author$project$Main$fixedInfo = A9(
 		]),
 	_List_fromArray(
 		[
-			A5($author$project$Main$Talk, 'Consider Collaboration', 'Samantha Frohlich, Harrison Goldstein', 'PLMW@POPL24', 'https://docs.google.com/presentation/d/1HrdGtbl5EW4M0XZ3hZJmi72lMAb2jrjcY_lXdcRzrjY/edit?usp=sharing', 'https://youtu.be/sSl-856qUOA?si=eDFwmkAMMG2_ejUl'),
-			A5($author$project$Main$Talk, 'Getting the Most Out of ICFP', 'Samantha Frohlich', 'PLMW@ICFP24', 'https://docs.google.com/presentation/d/1f53W7p2DlqpWQBbtYykaedsboNJyPEBIbD39WbDVbks/edit?usp=sharing', 'https://www.youtube.com/watch?v=pS_vJAwjcM4&t=59m6s')
+			A5($author$project$Main$Talk, 'Reflections on Property Based Testing', 'Samantha Frohlich', 'VeTSS Annual Conference 2025', 'https://docs.google.com/presentation/d/14WTcaoPMsGxLXBLH01UCraEEydDz47tk/edit?usp=sharing&ouid=106799023342350342037&rtpof=true&sd=true', 'https://www.youtube.com/watch?v=IZjlfz_GwHc'),
+			A5($author$project$Main$Talk, 'Getting the Most Out of ICFP', 'Samantha Frohlich', 'PLMW@ICFP24', 'https://docs.google.com/presentation/d/1f53W7p2DlqpWQBbtYykaedsboNJyPEBIbD39WbDVbks/edit?usp=sharing', 'https://www.youtube.com/watch?v=pS_vJAwjcM4&t=59m6s'),
+			A5($author$project$Main$Talk, 'Consider Collaboration', 'Samantha Frohlich, Harrison Goldstein', 'PLMW@POPL24', 'https://docs.google.com/presentation/d/1HrdGtbl5EW4M0XZ3hZJmi72lMAb2jrjcY_lXdcRzrjY/edit?usp=sharing', 'https://youtu.be/sSl-856qUOA?si=eDFwmkAMMG2_ejUl')
 		]),
 	_List_fromArray(
 		[

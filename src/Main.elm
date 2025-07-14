@@ -122,18 +122,25 @@ fixedInfo = Details
         "Content/Papers/CircuitFlow.pdf"
         "https://www.youtube.com/watch?v=LGaTnxYcdm4"
     ]
-    [ Talk
-        "Consider Collaboration"
-        "Samantha Frohlich, Harrison Goldstein"
-        "PLMW@POPL24"
-        "https://docs.google.com/presentation/d/1HrdGtbl5EW4M0XZ3hZJmi72lMAb2jrjcY_lXdcRzrjY/edit?usp=sharing"
-        "https://youtu.be/sSl-856qUOA?si=eDFwmkAMMG2_ejUl"
-    , Talk
+    [
+        Talk
+        "Reflections on Property Based Testing"
+        "Samantha Frohlich"
+        "VeTSS Annual Conference 2025"
+        "https://docs.google.com/presentation/d/14WTcaoPMsGxLXBLH01UCraEEydDz47tk/edit?usp=sharing&ouid=106799023342350342037&rtpof=true&sd=true"
+        "https://www.youtube.com/watch?v=IZjlfz_GwHc"
+    ,   Talk
         "Getting the Most Out of ICFP"
         "Samantha Frohlich"
         "PLMW@ICFP24"
         "https://docs.google.com/presentation/d/1f53W7p2DlqpWQBbtYykaedsboNJyPEBIbD39WbDVbks/edit?usp=sharing"
         "https://www.youtube.com/watch?v=pS_vJAwjcM4&t=59m6s"
+     ,   Talk
+        "Consider Collaboration"
+        "Samantha Frohlich, Harrison Goldstein"
+        "PLMW@POPL24"
+        "https://docs.google.com/presentation/d/1HrdGtbl5EW4M0XZ3hZJmi72lMAb2jrjcY_lXdcRzrjY/edit?usp=sharing"
+        "https://youtu.be/sSl-856qUOA?si=eDFwmkAMMG2_ejUl"
     ]
     [ Teaching
        "Advanced Topics in Programming Languages"
