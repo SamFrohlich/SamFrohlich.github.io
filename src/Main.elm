@@ -82,7 +82,7 @@ fixedInfo = Details
     "Lecturer"
     "University of Bristol"
     ["Security and Privacy", "Bidirectional programming", "Embedded domain specific languages", "Functional programming", "Language design"]
-    "My name is Sam (she/her), and I'm a part-time lecturer at the [University of Bristol](https://www.bristol.ac.uk/) in the [Programming Languages Research Group](https://plrg-bristol.github.io/). In the other half of my time, I'm finishing my PhD supervised by [Meng Wang](https://mengwangoxf.github.io/). I'm a highly creative researcher (you'll never see me with LaTeX slides) and I love teaching. <br> Fun fact about me: I have represented Scotland internationally at [quadball](https://quadballuk.org/programmes/team-scotland) as their captain!"
+    "My name is Sam (she/her), and I'm a lecturer at the [University of Bristol](https://www.bristol.ac.uk/) in the [Programming Languages Research Group](https://plrg-bristol.github.io/). I'm also finalising my PhD supervised by [Meng Wang](https://mengwangoxf.github.io/). I'm a highly creative researcher (you'll never see me with LaTeX slides) and I love teaching. <br> Fun fact about me: I have represented Scotland internationally at [quadball](https://quadballuk.org/programmes/team-scotland) as their captain!"
     [ Social
         "ORCiD"
         "https://orcid.org/0000-0002-4423-6918"
@@ -144,12 +144,12 @@ fixedInfo = Details
     ]
     [ Teaching
        "Advanced Topics in Programming Languages"
-       "2024 / 2025"
+       "2024-25 and 2025-26"
        "https://plrg-bristol.github.io/ATiPL/index.html"
     , Teaching
         "Advanced Haskell"
-        "2024"
-        "https://github.com/plrg-bristol/advanced-haskell-2024"
+        "2024 and 2025"
+        "https://github.com/plrg-bristol/advanced-haskell-2025"
     ]
 
 
