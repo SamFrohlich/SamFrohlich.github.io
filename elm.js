@@ -5349,7 +5349,7 @@ var $author$project$Main$fixedInfo = A9(
 	'Lecturer',
 	'University of Bristol',
 	_List_fromArray(
-		['Security and Privacy', 'Bidirectional programming', 'Embedded domain specific languages', 'Functional programming', 'Language design']),
+		['Bidirectional programming', 'Embedded domain specific languages', 'Functional programming', 'Language design']),
 	'My name is Sam (she/her), and I\'m a lecturer at the [University of Bristol](https://www.bristol.ac.uk/) in the [Programming Languages Research Group](https://plrg-bristol.github.io/). I\'m also finalising my PhD supervised by [Meng Wang](https://mengwangoxf.github.io/). I\'m a highly creative researcher (you\'ll never see me with LaTeX slides) and I love teaching. <br> Fun fact about me: I have represented Scotland internationally at [quadball](https://quadballuk.org/programmes/team-scotland) as their captain!',
 	_List_fromArray(
 		[
