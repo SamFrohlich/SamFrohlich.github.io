@@ -82,7 +82,7 @@ fixedInfo = Details
     "Lecturer"
     "University of Bristol"
     ["Bidirectional programming", "Embedded domain specific languages", "Functional programming", "Language design"]
-    "My name is Sam (she/her), and I'm a lecturer at the [University of Bristol](https://www.bristol.ac.uk/) in the [Programming Languages Research Group](https://plrg-bristol.github.io/). I'm also finalising my PhD supervised by [Meng Wang](https://mengwangoxf.github.io/). I'm a highly creative researcher (you'll never see me with LaTeX slides) and I love teaching. <br> Fun fact about me: I have represented Scotland internationally at [quadball](https://quadballuk.org/programmes/team-scotland) as their captain!"
+    "My name is Sam (she/her), and I'm a lecturer at the [University of Bristol](https://www.bristol.ac.uk/) in the [Programming Languages Research Group](https://plrg-bristol.github.io/). I'm a highly creative researcher (you'll never see me with LaTeX slides) and I love teaching. <br> Fun fact about me: I have represented Scotland internationally at [quadball](https://quadballuk.org/programmes/team-scotland) as their captain!"
     [ Social
         "ORCiD"
         "https://orcid.org/0000-0002-4423-6918"
@@ -101,6 +101,13 @@ fixedInfo = Details
         "Content/Images/github.svg"
     ]
     [ Publication
+        "Contextual Embeddings: Implementing Bound Variables through Instance Resolution"
+        "Samantha Frohlich, Jessica Foster, Alex Kavvos, Meng Wang"
+        "PLDI 2026"
+        "A*"
+        "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+        "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+    , Publication
         "Embedding by Unembedding"
         "Kazutaka Matsuda, Samantha Frohlich, Meng Wang, Nick Wu"
         "ICFP 2023"
@@ -152,6 +159,8 @@ fixedInfo = Details
         "https://github.com/plrg-bristol/advanced-haskell-2025"
     ]
 
+phdThesis : String
+phdThesis = """PhD Thesis: "Embedding Complex Languages in the Functional Programming Vernacular", supervised by [Meng Wang](https://mengwangoxf.github.io/), David Bernhard, and [Kazutaka Matsuda](https://www2.sf.ecei.tohoku.ac.jp/~kztk/)."""
 
 -- -----------------------------------------------------------------------------
 -- Model
@@ -197,6 +206,8 @@ view _ =
         , strong [] [text "Research Interests:"]
         , viewResearchInts fixedInfo.interests
         , p [style "padding" "0 20%"] (Markdown.toHtml Nothing fixedInfo.aboutMe)
+        -- Thesis
+        , p [style "padding" "0 20%"] (Markdown.toHtml Nothing phdThesis)
         -- Publications
         , h2 [] [text "Publications:"]
         , p [] (L.map viewPub fixedInfo.pubs)

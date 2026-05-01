@@ -5350,7 +5350,7 @@ var $author$project$Main$fixedInfo = A9(
 	'University of Bristol',
 	_List_fromArray(
 		['Bidirectional programming', 'Embedded domain specific languages', 'Functional programming', 'Language design']),
-	'My name is Sam (she/her), and I\'m a lecturer at the [University of Bristol](https://www.bristol.ac.uk/) in the [Programming Languages Research Group](https://plrg-bristol.github.io/). I\'m also finalising my PhD supervised by [Meng Wang](https://mengwangoxf.github.io/). I\'m a highly creative researcher (you\'ll never see me with LaTeX slides) and I love teaching. <br> Fun fact about me: I have represented Scotland internationally at [quadball](https://quadballuk.org/programmes/team-scotland) as their captain!',
+	'My name is Sam (she/her), and I\'m a lecturer at the [University of Bristol](https://www.bristol.ac.uk/) in the [Programming Languages Research Group](https://plrg-bristol.github.io/). I\'m a highly creative researcher (you\'ll never see me with LaTeX slides) and I love teaching. <br> Fun fact about me: I have represented Scotland internationally at [quadball](https://quadballuk.org/programmes/team-scotland) as their captain!',
 	_List_fromArray(
 		[
 			A3($author$project$Main$Social, 'ORCiD', 'https://orcid.org/0000-0002-4423-6918', 'Content/Images/orcid.svg'),
@@ -5360,6 +5360,7 @@ var $author$project$Main$fixedInfo = A9(
 		]),
 	_List_fromArray(
 		[
+			A6($author$project$Main$Publication, 'Contextual Embeddings: Implementing Bound Variables through Instance Resolution', 'Samantha Frohlich, Jessica Foster, Alex Kavvos, Meng Wang', 'PLDI 2026', 'A*', 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'),
 			A6($author$project$Main$Publication, 'Embedding by Unembedding', 'Kazutaka Matsuda, Samantha Frohlich, Meng Wang, Nick Wu', 'ICFP 2023', 'A', 'Content/Papers/EmbeddingByUnembedding.pdf', 'https://youtu.be/9vtoJrZxa0k?si=Fjdf1NevPgpIb4g4'),
 			A6($author$project$Main$Publication, 'Reflecting on Random Generation (Distinguished Paper)', 'Harrison Goldstein, Samantha Frohlich, Meng Wang, Benjamin C. Pierce', 'ICFP 2023', 'A', 'Content/Papers/ReflectingOnRandomGeneration.pdf', 'https://youtu.be/iutt_BKLgDk?si=0tUq7ZT5HymJq2Hr'),
 			A6($author$project$Main$Publication, 'CircuitFlow: A Domain Specific Language for Dataflow Programming', 'Riley Evans, Samantha Frohlich, Meng Wang', 'PADL 2022', 'B', 'Content/Papers/CircuitFlow.pdf', 'https://www.youtube.com/watch?v=LGaTnxYcdm4')
@@ -5385,6 +5386,7 @@ var $elm$html$Html$Attributes$height = function (n) {
 };
 var $elm$html$Html$img = _VirtualDom_node('img');
 var $elm$html$Html$p = _VirtualDom_node('p');
+var $author$project$Main$phdThesis = 'PhD Thesis: "Embedding Complex Languages in the Functional Programming Vernacular", supervised by [Meng Wang](https://mengwangoxf.github.io/), David Bernhard, and [Kazutaka Matsuda](https://www2.sf.ecei.tohoku.ac.jp/~kztk/).';
 var $elm$html$Html$small = _VirtualDom_node('small');
 var $elm$html$Html$Attributes$src = function (url) {
 	return A2(
@@ -9887,6 +9889,13 @@ var $author$project$Main$view = function (_v0) {
 						A2($elm$html$Html$Attributes$style, 'padding', '0 20%')
 					]),
 				A2($pablohirafuji$elm_markdown$Markdown$toHtml, $elm$core$Maybe$Nothing, $author$project$Main$fixedInfo.aboutMe)),
+				A2(
+				$elm$html$Html$p,
+				_List_fromArray(
+					[
+						A2($elm$html$Html$Attributes$style, 'padding', '0 20%')
+					]),
+				A2($pablohirafuji$elm_markdown$Markdown$toHtml, $elm$core$Maybe$Nothing, $author$project$Main$phdThesis)),
 				A2(
 				$elm$html$Html$h2,
 				_List_Nil,
