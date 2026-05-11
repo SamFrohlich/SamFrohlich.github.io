@@ -160,7 +160,7 @@ fixedInfo = Details
     ]
 
 phdThesis : String
-phdThesis = """PhD Thesis: "Embedding Complex Languages in the Functional Programming Vernacular", supervised by [Meng Wang](https://mengwangoxf.github.io/), David Bernhard, and [Kazutaka Matsuda](https://www2.sf.ecei.tohoku.ac.jp/~kztk/)."""
+phdThesis = """[PhD Thesis](https://samfrohlich.github.io/Content/Papers/thesis.pdf): "Embedding Complex Languages in the Functional Programming Vernacular", supervised by [Meng Wang](https://mengwangoxf.github.io/), David Bernhard, and [Kazutaka Matsuda](https://www2.sf.ecei.tohoku.ac.jp/~kztk/)."""
 
 -- -----------------------------------------------------------------------------
 -- Model

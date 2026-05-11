@@ -5386,7 +5386,7 @@ var $elm$html$Html$Attributes$height = function (n) {
 };
 var $elm$html$Html$img = _VirtualDom_node('img');
 var $elm$html$Html$p = _VirtualDom_node('p');
-var $author$project$Main$phdThesis = 'PhD Thesis: "Embedding Complex Languages in the Functional Programming Vernacular", supervised by [Meng Wang](https://mengwangoxf.github.io/), David Bernhard, and [Kazutaka Matsuda](https://www2.sf.ecei.tohoku.ac.jp/~kztk/).';
+var $author$project$Main$phdThesis = '[PhD Thesis](https://samfrohlich.github.io/Content/Papers/thesis.pdf): "Embedding Complex Languages in the Functional Programming Vernacular", supervised by [Meng Wang](https://mengwangoxf.github.io/), David Bernhard, and [Kazutaka Matsuda](https://www2.sf.ecei.tohoku.ac.jp/~kztk/).';
 var $elm$html$Html$small = _VirtualDom_node('small');
 var $elm$html$Html$Attributes$src = function (url) {
 	return A2(
