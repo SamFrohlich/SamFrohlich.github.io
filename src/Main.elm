@@ -105,7 +105,7 @@ fixedInfo = Details
         "Samantha Frohlich, Jessica Foster, Alex Kavvos, Meng Wang"
         "PLDI 2026"
         "A*"
-        "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+        "Content/Papers/CE.pdf"
         "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
     , Publication
         "Embedding by Unembedding"

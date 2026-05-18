@@ -5360,7 +5360,7 @@ var $author$project$Main$fixedInfo = A9(
 		]),
 	_List_fromArray(
 		[
-			A6($author$project$Main$Publication, 'Contextual Embeddings: Implementing Bound Variables through Instance Resolution', 'Samantha Frohlich, Jessica Foster, Alex Kavvos, Meng Wang', 'PLDI 2026', 'A*', 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'),
+			A6($author$project$Main$Publication, 'Contextual Embeddings: Implementing Bound Variables through Instance Resolution', 'Samantha Frohlich, Jessica Foster, Alex Kavvos, Meng Wang', 'PLDI 2026', 'A*', 'Content/Papers/CE.pdf', 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'),
 			A6($author$project$Main$Publication, 'Embedding by Unembedding', 'Kazutaka Matsuda, Samantha Frohlich, Meng Wang, Nick Wu', 'ICFP 2023', 'A', 'Content/Papers/EmbeddingByUnembedding.pdf', 'https://youtu.be/9vtoJrZxa0k?si=Fjdf1NevPgpIb4g4'),
 			A6($author$project$Main$Publication, 'Reflecting on Random Generation (Distinguished Paper)', 'Harrison Goldstein, Samantha Frohlich, Meng Wang, Benjamin C. Pierce', 'ICFP 2023', 'A', 'Content/Papers/ReflectingOnRandomGeneration.pdf', 'https://youtu.be/iutt_BKLgDk?si=0tUq7ZT5HymJq2Hr'),
 			A6($author$project$Main$Publication, 'CircuitFlow: A Domain Specific Language for Dataflow Programming', 'Riley Evans, Samantha Frohlich, Meng Wang', 'PADL 2022', 'B', 'Content/Papers/CircuitFlow.pdf', 'https://www.youtube.com/watch?v=LGaTnxYcdm4')
